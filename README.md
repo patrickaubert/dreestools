@@ -30,6 +30,11 @@ La version de développement peut être téléchargée sous
 devtools::install_github("patrickaubert/dreestools",ref='main')
 ```
 
+## Présentation
+
+Le contenu du package est présenté sur sa page web :
+<https://patrickaubert.github.io/dreestools/>
+
 ## Exemples
 
 A venir …
