@@ -26,7 +26,7 @@ Ce package vise à fournir des outils pratiques (fonctions et tables de métadon
 
 ## Installation
 
-La version de développement peut être téléchargée sous [GitHub](https://github.com/) :
+La version de développement peut être téléchargée sous [GitHub](https://github.com/patrickaubert/dreestools) :
 
 ``` r
 # install.packages("devtools")

@@ -1,0 +1,8 @@
+template:
+  params:
+    bootswatch: sandstone
+title: dreestools
+url: https://patrickaubert.github.io/dreestools/
+authors:
+  Patrick Aubert:
+    href: https://sites.google.com/site/patrickauber/

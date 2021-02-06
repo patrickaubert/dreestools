@@ -23,7 +23,7 @@ only.
 ## Installation
 
 La version de développement peut être téléchargée sous
-[GitHub](https://github.com/) :
+[GitHub](https://github.com/patrickaubert/dreestools) :
 
 ``` r
 # install.packages("devtools")
