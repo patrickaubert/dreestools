@@ -1,15 +1,14 @@
 Package: dreestools
-Title: What the Package Does (One Line, Title Case)
+Title: Des outils pratiques pour explorer et utiliser les jeux de données diffusés par la DREES
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Patrick",
+           family = "Aubert",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "patrick.aubert@m4x.org",
+           comment = structure("0000-0003-1777-8639", .Names = "ORCID"))
+Description: Ce package contient diverses fonctions et tables de métadonnées destinées à faciliter l'exploration, la récupération et l'utilisation des données publiées par la DREES (service statistique du ministère en charge des affaires sociales et de la santé) sur son site web ou son entrepot de données data.drees.
+License: EUPL 1.2
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
