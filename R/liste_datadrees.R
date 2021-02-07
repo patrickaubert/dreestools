@@ -19,6 +19,7 @@ liste_datadrees <- function(rubriques = c(), producteurs = c()) {
   # récupère la liste des jeux de données de l'entrepot data.drees
   jdd <- read.csv2(file = "https://data.drees.solidarites-sante.gouv.fr/api/v2/catalog/exports/csv?delimiter=%3B&lang=fr",
                    fileEncoding = "UTF8")
+
   # restreint aux rubriques ou producteurs souhaités
     # on définit d'abord une fonction auxiliaire décomposant les thèmes multiples en un vecteur des thèmes
   scinde <- function(var) {

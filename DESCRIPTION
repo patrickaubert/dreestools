@@ -17,3 +17,5 @@ Imports:
     stringr,
     dplyr,
     rvest
+Depends: 
+    R (>= 2.10)
