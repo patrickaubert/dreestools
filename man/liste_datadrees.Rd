@@ -4,10 +4,12 @@
 \alias{liste_datadrees}
 \title{Récupère la liste de tous les fichiers data.drees}
 \usage{
-liste_datadrees(rubriques = NA)
+liste_datadrees(rubriques = c(), producteurs = c())
 }
 \arguments{
 \item{rubriques}{une liste de rubriques (par défaut toutes les rubriques disponibles)}
+
+\item{producteurs}{une liste de producteurs (par défaut tous les producteurs disponibles)}
 }
 \value{
 
@@ -18,8 +20,9 @@ diffusés par la DREES. Ces fichiers sont plus nombreux que les jeux de données
 jeu de données peut contenir plusieurs fichiers (.xlsx, .csv, .zip, etc.)
 }
 \details{
-Si une liste de rubriques est indiquée, seuls les fichiers de ces rubriques seront retenus.
+Si une liste de rubriques ou de producteurs est indiquée, seuls les fichiers de ces rubriques ou producteurs seront retenus.
 }
 \examples{
-liste_datadrees(rubriques = c("Retraite"))
+liste_datadrees(rubriques = c("retraite"))
+liste_datadrees(producteurs = c("OSOL"))
 }
