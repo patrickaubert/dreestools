@@ -13,7 +13,7 @@ pathdatadrees <- function(jdd,fichier) {
     jdd,
     "/attachments/",
     gsub("\\.","",fichier),
-    "/)"
+    "/"
     )
 }
 
