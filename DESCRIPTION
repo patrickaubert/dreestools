@@ -1,6 +1,6 @@
 Package: dreestools
 Title: Des outils pratiques pour explorer et utiliser les jeux de données diffusés par la DREES
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person(given = "Patrick",
            family = "Aubert",
