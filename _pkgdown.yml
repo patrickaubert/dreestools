@@ -6,3 +6,17 @@ url: https://patrickaubert.github.io/dreestools/
 authors:
   Patrick Aubert:
     href: https://sites.google.com/site/patrickauber/
+reference:
+- title: Exploration de data.drees
+  desc:  Fonctions pour l'exploration de data.drees
+- contents:
+  - liste_datadrees
+  - pathdatadrees
+- title: Extraction de données
+  desc:  Fonctions pour l'extraction de données ou de métadonnée à partir des fichiers data.drees
+- contents:
+  - extrait_onglet
+- title: Tables de données
+  desc:  Tables des métadonnées lues à partir de data.drees
+- contents:
+  - OSOLdatadrees
