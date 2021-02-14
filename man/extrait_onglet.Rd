@@ -26,4 +26,7 @@ Nota : Cette fonction a initialement été dupliquée à partir de la fonction r
 tab_et_infos <- extrait_onglet(file=pathdatadrees("549_la-prestation-de-compensation-du-handicap-pch","pch_et_actp_beneficiaires_par_sexe_et_age_montants_verses_donnees_2016.xlsx"), sheet="Tableau 1")
 tab_et_infos2 <- extrait_onglet(file=pathdatadrees("376_les-depenses-d-aide-sociale-departementale","les_depenses_daide_sociale_departementale_series_longues_1999_2018.xlsx"), sheet="DonnÃ©es nationales")
 tab_et_infos3 <- extrait_onglet(file=pathdatadrees("336_minima-sociaux-rsa-et-prime-d-activite","rsa_et_prime_d_activites_donnees_par_sexe_et_configuration_familiale_xlsx"), sheet="Tableau 2")
+tab4 <- extrait_onglet(file=pathdatadrees("619_indicateurs-financiers","fi09_fi10_isd_depenses_d_aide_a_l_hebergement_des_personnes_handicapees_en_etablissement_xlsx"), sheet="2017")$tab
+tab5 <- extrait_onglet(file=pathdatadrees("donnees-mensuelles-sur-les-prestations-de-solidarite","donnees_mensuelles_prestations_solidarite_janvier2021_mm_xlsx"), sheet="Tableau 1")$tab
+tab6 <- extrait_onglet(file=pathdatadrees("4230_indicateurs-de-pauvrete-avant-et-apres-redistribution-de-niveau-de-vie-et-d","series_longues_d_indicateurs_de_pauvrete_xlsx"), sheet="Tableau 1a")$tab
 }

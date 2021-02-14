@@ -2,4 +2,5 @@
 
 export(extrait_onglet)
 export(liste_datadrees)
+export(nettoie_table)
 export(pathdatadrees)
