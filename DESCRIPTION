@@ -17,6 +17,8 @@ Imports:
     stringr,
     dplyr,
     rvest,
-    stringi
+    stringi,
+    readxl,
+    httr
 Depends: 
     R (>= 2.10)

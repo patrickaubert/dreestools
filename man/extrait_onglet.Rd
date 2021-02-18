@@ -29,4 +29,5 @@ tab_et_infos3 <- extrait_onglet(file=pathdatadrees("336_minima-sociaux-rsa-et-pr
 tab4 <- extrait_onglet(file=pathdatadrees("619_indicateurs-financiers","fi09_fi10_isd_depenses_d_aide_a_l_hebergement_des_personnes_handicapees_en_etablissement_xlsx"), sheet="2017")$tab
 tab5 <- extrait_onglet(file=pathdatadrees("donnees-mensuelles-sur-les-prestations-de-solidarite","donnees_mensuelles_prestations_solidarite_janvier2021_mm_xlsx"), sheet="Tableau 1")$tab
 tab6 <- extrait_onglet(file=pathdatadrees("4230_indicateurs-de-pauvrete-avant-et-apres-redistribution-de-niveau-de-vie-et-d","series_longues_d_indicateurs_de_pauvrete_xlsx"), sheet="Tableau 1a")$tab
+tab_et_infos7 <- extrait_onglet(file=pathdatadrees("2034_la-retraite-supplementaire-facultative-et-l-epargne-retraite","la_retraite_supplementaire_donnees_jusquau_31_decembre_2018xls"), sheet="30-T1")
 }

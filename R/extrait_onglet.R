@@ -18,6 +18,7 @@
 #' @examples tab4 <- extrait_onglet(file=pathdatadrees("619_indicateurs-financiers","fi09_fi10_isd_depenses_d_aide_a_l_hebergement_des_personnes_handicapees_en_etablissement_xlsx"), sheet="2017")$tab
 #' @examples tab5 <- extrait_onglet(file=pathdatadrees("donnees-mensuelles-sur-les-prestations-de-solidarite","donnees_mensuelles_prestations_solidarite_janvier2021_mm_xlsx"), sheet="Tableau 1")$tab
 #' @examples tab6 <- extrait_onglet(file=pathdatadrees("4230_indicateurs-de-pauvrete-avant-et-apres-redistribution-de-niveau-de-vie-et-d","series_longues_d_indicateurs_de_pauvrete_xlsx"), sheet="Tableau 1a")$tab
+#' @examples tab_et_infos7 <- extrait_onglet(file=pathdatadrees("2034_la-retraite-supplementaire-facultative-et-l-epargne-retraite","la_retraite_supplementaire_donnees_jusquau_31_decembre_2018xls"), sheet="30-T1")
 extrait_onglet <- function(file,
                            sheet
                            ) {
@@ -36,6 +37,8 @@ extrait_onglet <- function(file,
   # sheet <- "2017"
   # file <- pathdatadrees("4230_indicateurs-de-pauvrete-avant-et-apres-redistribution-de-niveau-de-vie-et-d","series_longues_d_indicateurs_de_pauvrete_xlsx")
   # sheet <- "Tableau 1a"
+  # file <- pathdatadrees("2034_la-retraite-supplementaire-facultative-et-l-epargne-retraite","la_retraite_supplementaire_donnees_jusquau_31_decembre_2018xls")  # sheet <- "30-T1"
+  # sheet <- "30-T1"
 
   # ========================================
   # vérifications préliminaires
@@ -43,9 +46,18 @@ extrait_onglet <- function(file,
 
   # ========================================
   # extraction des données de l'onglet
-  tabcompl <- read.xlsx(xlsxFile = file, sheet = sheet,
-                        colNames = FALSE,
-                        skipEmptyRows = TRUE, skipEmptyCols = TRUE)
+  if (grepl("xlsx/$",file)) {
+    tabcompl <- read.xlsx(xlsxFile = file, sheet = sheet,
+                          colNames = FALSE,
+                          skipEmptyRows = TRUE, skipEmptyCols = TRUE)
+  } else if (grepl("xls/$",file)) {
+    httr::GET(file, write_disk(fileloc <- tempfile(fileext = ".xls")))
+    tabcompl <- read_excel(path = fileloc, sheet = sheet,
+                           col_names = FALSE)
+    unlink(fileloc)
+  } else {
+    stop("Le chemin n'indique pas un fichie Excel (.xls ou .xlsx)")
+  }
   if (ncol(tabcompl)<=1) { return(NULL) }
 
   # ========================================

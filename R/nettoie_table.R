@@ -50,7 +50,7 @@ nettoie_table <- function(tab,
   }
 
   # traitements des noms de colonnes
-  namesinit <- names(tab)
+  namesinit <- names(tab) %>%  str_replace("^(X|\\.\\.\\.)","categorie")
   titres <- tab[1:nlignetitre,]
   if (nlignetitre>1) {
     #for (i in 1:(nlignetitre-1)) {
@@ -116,7 +116,7 @@ nettoie_table <- function(tab,
 
   # == identifie les colonnes de valeurs
 
-  ischiffre <- function(x) { is.na(x) | grepl("^[[:digit:]]+",x)}
+  ischiffre <- function(x) { is.na(x) | grepl("^(\\-|)[[:digit:]]+",x)}
   colvaleurs <- names(tab[,(colSums(tab %>% mutate_all(ischiffre)) == nrow(tab))])
 
   # on exclut des colonnes considérées comme contenant des valeurs la première colonne du tableau, et celles qui s'intitulent "catégorie", "département" ou "région"
@@ -127,7 +127,7 @@ nettoie_table <- function(tab,
 
   # == mise du tableau en forme longue
 
-  numerique <- function(x) {as.numeric(ifelse(grepl("^[[:digit:]]*,[[:digit:]]*$",x),gsub(",",".",x),x))}
+  numerique <- function(x) {as.numeric(ifelse(grepl("^(\\-|)[[:digit:]]*,[[:digit:]]*$",x),gsub(",",".",x),x))}
 
   tab <- tab %>%  mutate_at(colvaleurs,numerique)
 
@@ -143,6 +143,19 @@ nettoie_table <- function(tab,
   #  if (sum(is.na(tab$info.valeurs)) == nrow(tab)) { tab <- tab %>% select(-info.valeurs)}
   #}
   #tab <- tab %>% mutate(valeurs = as.numeric(valeurs))
+
+  # == séparation des intitulés issus de titres sur plusieurs lignes
+  nbintitules <- max(nchar(gsub("[^#]","",tab$intitules)))/3+1
+  if (nbintitules == round(nbintitules,0)) {
+    tab <- tab %>%
+      separate(intitules,into=paste0("intitules.sep",c(1:nbintitules)),sep="###")
+  }
+  nvarcateg <- NROW( names(tab)[grepl("^(categ|intitule)",names(tab))])
+  if (nvarcateg == 1) {
+    names(tab)[grepl("^(categ|intitule)",names(tab))] <- "categorie"
+  } else if (nvarcateg > 1) {
+    names(tab)[grepl("^(categ|intitule)",names(tab))] <- paste0("categorie",c("",as.character(2:nvarcateg)))
+  }
 
   # == reconnait certains types d'intitulés
 
