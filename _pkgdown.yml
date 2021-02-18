@@ -13,9 +13,11 @@ reference:
   - liste_datadrees
   - pathdatadrees
 - title: Extraction de données
-  desc:  Fonctions pour l'extraction de données ou de métadonnée à partir des fichiers data.drees
+  desc:  Fonctions pour l'extraction (et le nettoyage) de données ou de métadonnée à partir des fichiers data.drees
 - contents:
   - extrait_onglet
+  - nettoie_table
+  - identifie_type_variable
 - title: Tables de données
   desc:  Tables des métadonnées lues à partir de data.drees
 - contents:
